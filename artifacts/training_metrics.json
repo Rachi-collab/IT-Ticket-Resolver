@@ -1,0 +1,8 @@
+{
+  "coarse_accuracy": 1.0,
+  "fine_accuracy_avg": 1.0,
+  "n_coarse_categories": 5,
+  "n_issue_types": 15,
+  "n_training_rows": 1200,
+  "avg_latency_ms": 3.01
+}
