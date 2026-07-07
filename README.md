@@ -62,7 +62,7 @@ Ticket (text / screenshot)
  ┌─────────────────────┐
  │ Solution retrieval  │  app/retrieval.py
  │(nearest past tickets│
- │  of same issue type)│
+ │ of same issue type) │
  └─────────────────────┘
         │
         ▼
