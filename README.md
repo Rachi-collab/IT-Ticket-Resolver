@@ -28,26 +28,26 @@ Ticket (text / screenshot)
         │
         ▼
  ┌─────────────────────┐
- │ OCR (if screenshot)   │  app/ocr.py
+ │ OCR (if screenshot) │  app/ocr.py
  └─────────────────────┘
         │
         ▼
  ┌─────────────────────┐
- │ Text normalization    │  app/preprocessing.py
- │ (typo fixes, cleanup) │
+ │ Text normalization  │  app/preprocessing.py
+ │ (typo fixes,cleanup)│
  └─────────────────────┘
         │
         ▼
  ┌─────────────────────┐
- │ Stage 1: coarse       │
- │ category classifier   │  app/classifier.py
+ │ Stage 1: coarse     │
+ │ category classifier │  app/classifier.py
  └─────────────────────┘
         │
         ▼
  ┌─────────────────────┐
- │ Stage 2: fine issue-   │
- │ type classifier        │
- │ (per-category model)   │
+ │ Stage 2: fine issue-│
+ │ type classifier     │
+ │ (per-category model)│
  └─────────────────────┘
         │
         ▼
