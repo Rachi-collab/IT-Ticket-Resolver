@@ -17,7 +17,9 @@ def test_health(client):
 
 
 def test_classify_clear_ticket(client):
-    resp = client.post("/classify", json={"text": "printer showing offline even though its on"})
+    resp = client.post(
+        "/classify", json={"text": "printer showing offline even though its on"}
+    )
     assert resp.status_code == 200
     body = resp.json()
     assert body["issue_type"] == "printer_not_working"
@@ -26,12 +28,25 @@ def test_classify_clear_ticket(client):
 
 
 def test_classify_noisy_ticket(client):
-    resp = client.post("/classify", json={
-        "text": "vpn keps disconecting evry few minuts pls help asap"
-    })
+    resp = client.post(
+        "/classify",
+        json={"text": "vpn keps disconecting evry few minuts pls help asap"},
+    )
     assert resp.status_code == 200
     body = resp.json()
     assert body["issue_type"] == "vpn_connection_failure"
+
+
+def test_classify_image_rejects_invalid_image(client):
+    resp = client.post(
+        "/classify_image",
+        files={"file": ("invalid.png", b"not an image", "image/png")},
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["issue_type"] == "unknown"
+    assert body["should_escalate_to_human"] is True
+    assert body["suggested_resolution"] is None
 
 
 def test_classify_rejects_empty_text(client):
