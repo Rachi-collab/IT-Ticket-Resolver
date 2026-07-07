@@ -1,13 +1,4 @@
-"""
-Preprocessing layer: normalizes noisy/poorly-written ticket text before
-it hits the classifier. This is the module that absorbs most of the
-"30% noisy tickets" constraint from the problem statement.
-"""
 import re
-
-# Small domain-specific normalization map. In production this would be
-# a proper spellchecker (SymSpell / hunspell) trained on IT vocabulary,
-# but a lookup table keeps this prototype dependency-light and fast.
 COMMON_FIXES = {
     "teh": "the", "adn": "and", "internert": "internet", "passwrod": "password",
     "cant": "cannot", "keps": "keeps", "conection": "connection", "acess": "access",
