@@ -52,17 +52,17 @@ Ticket (text / screenshot)
         │
         ▼
  ┌─────────────────────┐
- │ Confidence check       │
- │  low → escalate to     │
- │       human agent       │
- │  high → continue        │
+ │ Confidence check    │
+ │  low → escalate to  │
+ │       human agent   │
+ │  high → continue    │
  └─────────────────────┘
         │
         ▼
  ┌─────────────────────┐
- │ Solution retrieval     │  app/retrieval.py
- │ (nearest past tickets  │
- │  of same issue type)   │
+ │ Solution retrieval  │  app/retrieval.py
+ │(nearest past tickets│
+ │  of same issue type)│
  └─────────────────────┘
         │
         ▼
